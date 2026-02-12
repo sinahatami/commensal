@@ -50,10 +50,6 @@ Ensure you have a Python 3.8+ environment. Install the necessary dependencies:
 ```
 pip install mediapipe opencv-python pandas numpy pympi-ling
 ```
-2/11/26, 11:53 PM Google Gemini
-
-https://gemini.google.com/app 1 / 2
-
 
 ## 🔄 Workflow
 
