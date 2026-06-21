@@ -21,44 +21,29 @@ Label Processing: Intelligent mapping and cleaning of hierarchical annotations.
 ## 📂 Repository Structure
 
 ```
-File Description
-```
-```
-eaf-to-csv-convert.ipynb Converts ELAN .eaf files to CSV and standardizes tier/annotation
-labels.
-```
-```
-landmark-face-
-detection.ipynb
-```
-```
-The core engine. Extracts 468 facial landmarks, hand positions, and
-body pose features.
-```
-```
-analyze-labels.ipynb Statistical analysis of annotations, including label frequency
-distribution and overlap detection.
-```
-```
-import pandas as pd.py Utility script for batch-processing and cleaning annotation CSVs.
-```
+| File/Directory | Description |
+| --- | --- |
+| `notebooks/eaf-to-csv-convert.ipynb` | Converts ELAN .eaf files to CSV and standardizes tier/annotation labels. |
+| `notebooks/landmark-face-detection.ipynb` | The core engine. Extracts 468 facial landmarks, hand positions, and body pose features. |
+| `notebooks/analyze-labels.ipynb` | Statistical analysis of annotations, including label frequency distribution and overlap detection. |
+| `scripts/process_annotations.py` | Utility script for batch-processing and cleaning annotation CSVs. |
 ## 🛠 Installation
 
 ```
 Ensure you have a Python 3.8+ environment. Install the necessary dependencies:
 ```
-```
-pip install mediapipe opencv-python pandas numpy pympi-ling
+```bash
+pip install -r requirements.txt
 ```
 
 ## 🔄 Workflow
 
 1. Annotation Pre-processing
-Use eaf-to-csv-convert.ipynb to transform your manual annotations. It includes logic to
+Use `notebooks/eaf-to-csv-convert.ipynb` to transform your manual annotations. It includes logic to
 map generic "Yes" labels back to their specific Tier names (e.g., Left_speaking,
     Right_eating), creating a clean ground-truth dataset.
 2. Automated Feature Extraction
-Run landmark-face-detection.ipynb to process video files. The script extracts:
+Run `notebooks/landmark-face-detection.ipynb` to process video files. The script extracts:
     Mouth/Lip Metrics: Lip distance, mouth width, and ear-to-lip ratios (useful for detecting
     speaking/eating).
     Gaze & Head Pose: Vertical/horizontal gaze angles and face orientation.
@@ -66,7 +51,7 @@ Run landmark-face-detection.ipynb to process video files. The script extracts:
     Binary Indicators: Synchronized ground-truth flags for smiling, speaking, eating,
     and fork_towards.
 3. Data Validation
-Utilize analyze-labels.ipynb to visualize class balance and ensure your annotations aren't
+Utilize `notebooks/analyze-labels.ipynb` to visualize class balance and ensure your annotations aren't
 overlapping in ways that might confuse a machine learning model.
 
 ## 📐 Extracted Metrics
